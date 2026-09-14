@@ -6,4 +6,278 @@
 <li> <img src="image.jpg" alt="Цветок" style="width: 600px;" />
 <li> <a href="https://html5book.ru/css-css3/#vid_vpaut_div">фрагмент стр</a>
  <li>https://yandex.ru/search/?text=yh%2Cshnkea%27og&clid=2411726&source=chrome.ob&lr=35</li>
+<ul>
+
+    <!-- 6. Ссылка на фрагмент текущей страницы -->
+
+    <li>
+
+        <a href="#form">Перейти к форме</a>
+
+    </li>
+
+    <!-- 7. Ссылка с тремя параметрами в URL -->
+
+    <li>
+
+        <a href="https://kubsu.ru/?a=1&amp;b=2&amp;c=3">
+
+            КубГУ
+
+        </a>
+
+    </li>
+
+    <!-- 8. Ссылка с параметром id в URL -->
+
+    <li>
+
+        <a href="https://kubsu.ru/?id=123">
+
+            КубГУ
+
+        </a>
+
+    </li>
+
+    <!-- 9. Относительная ссылка на страницу в текущем каталоге -->
+
+    <li>
+
+        <a href="gg.html">
+
+            Внутренняя страница
+
+        </a>
+
+    </li>
+
+    <!-- 10. Относительная ссылка на страницу в каталоге about -->
+
+    <li>
+
+        <a href="about/about.html">
+
+            About
+
+        </a>
+
+    </li>
+
+    <!-- 11. Относительная ссылка на страницу в каталоге уровнем выше -->
+
+    <li>
+
+        <a href="level1/level2/page.html">
+
+            Страница для ссылки уровнем выше
+
+        </a>
+
+    </li>
+
+    <!-- 12. Относительная ссылка на страницу двумя уровнями выше -->
+
+    <li>
+
+        <a href="level1/level2/page.html">
+
+            Страница для ссылки двумя уровнями выше
+
+        </a>
+
+    </li>
+
+    <!-- 13. Контекстная ссылка -->
+
+    <li>
+
+        <p>
+
+            Я учусь в
+
+            <a href="https://kubsu.ru/">
+
+                Кубанском государственном университете
+
+            </a>.
+
+        </p>
+
+    </li>
+
+    <!-- 14. Ссылка на фрагмент стороннего сайта -->
+
+    <li>
+
+        <a href="https://start.kubsu.ru/FAQabitur#content">
+
+            Вопросы поступающих КубГУ
+
+        </a>
+
+    </li>
+
+    <!-- 15. Ссылки из прямоугольной и круглой области изображения -->
+
+    <li>
+
+        <img src="image.jpg"
+
+             alt="КубГУ"
+
+             width="600"
+
+             usemap="#kubsu-map">
+
+        <map name="kubsu-map">
+
+            <area
+
+                shape="rect"
+
+                coords="0,0,250,200"
+
+                href="https://kubsu.ru/"
+
+                alt="КубГУ">
+
+            <area
+
+                shape="circle"
+
+                coords="400,150,80"
+
+                href="https://start.kubsu.ru/"
+
+                alt="Абитуриенту КубГУ">
+
+        </map>
+
+    </li>
+
+    <!-- 16. Ссылка с пустым href -->
+
+    <li>
+
+        <a href="">
+
+            Пустая ссылка
+
+        </a>
+
+    </li>
+
+    <!-- 17. Ссылка без href -->
+
+    <li>
+
+        <a>
+
+            Ссылка без href
+
+        </a>
+
+    </li>
+
+    <!-- 18. Ссылка, по которой запрещён переход поисковикам -->
+
+    <li>
+
+        <a href="https://kubsu.ru/" rel="nofollow">
+
+            КубГУ
+
+        </a>
+
+    </li>
+
+    <!-- 19. Ссылка, запрещённая для индексации -->
+
+    <li>
+
+        <noindex>
+
+            <a href="https://kubsu.ru/">
+
+                КубГУ
+
+            </a>
+
+        </noindex>
+
+    </li>
+
+    <!-- 20. Нумерованный список ссылок с title -->
+
+    <li>
+
+        <ol>
+
+            <li>
+
+                <a href="https://kubsu.ru/"
+
+                   title="Официальный сайт Кубанского государственного университета">
+
+                    КубГУ
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="https://start.kubsu.ru/"
+
+                   title="Сайт для поступающих в КубГУ">
+
+                    Абитуриенту
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="https://start.kubsu.ru/FAQabitur"
+
+                   title="Вопросы и ответы для поступающих">
+
+                    Вопросы поступающих
+
+                </a>
+
+            </li>
+
+        </ol>
+
+    </li>
+
+    <!-- 21. FTP-ссылка с авторизацией -->
+
+    <li>
+
+        <a href="ftp://user:password@kubsu.ru/file.txt">
+
+            FTP-файл
+
+        </a>
+
+    </li>
+
+</ul>
+
+<h2 id="form">Форма</h2>
+
+<form>
+
+    <label>
+
+        Имя:
+
+        <input type="text" name="name">
+    </label>
+</form>
+
 </ul>
