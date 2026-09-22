@@ -3,15 +3,18 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Шапка на всю ширину */
 header {
     width: 100%;
     background-color: lightblue;
 }
 
+/* Содержимое шапки — максимум 960px */
 .header-content {
     max-width: 960px;
     margin: 0 auto;
     padding: 15px;
+    box-sizing: border-box;
 
     display: flex;
     align-items: center;
@@ -29,36 +32,48 @@ header {
     flex: 1;
 }
 
+/* Меню */
 nav {
     margin-left: auto;
-    padding: 10px;
 }
 
 nav a {
-    margin-right: 20px;
+    margin-left: 15px;
 }
 
+/* Основной контент */
 main {
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
+    box-sizing: border-box;
 }
 
+/* Все большие картинки не выходят за границы контента */
+main img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Таблица */
 table {
     width: 100%;
     border-collapse: collapse;
+    margin: 20px 0;
 }
 
 th,
 td {
     border: 1px solid black;
     padding: 10px;
+    text-align: center;
 }
 
 th {
     background-color: lightblue;
 }
 
+/* Чередование строк */
 tr:nth-child(even) {
     background-color: #eeeeee;
 }
@@ -67,6 +82,12 @@ tr:nth-child(odd) {
     background-color: white;
 }
 
+/* Форма */
+form {
+    margin-top: 20px;
+}
+
+/* Подвал на всю ширину */
 footer {
     width: 100%;
     background-color: lightblue;
@@ -77,8 +98,5 @@ footer {
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
-}
-img {
-    max-width: 600px;
-    height: auto;
+    box-sizing: border-box;
 }
