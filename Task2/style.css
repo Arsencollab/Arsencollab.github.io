@@ -3,12 +3,13 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Шапка на всю ширину */
+/* ШАПКА — на всю ширину */
 header {
     width: 100%;
     background-color: lightblue;
 }
 
+/* Содержимое шапки */
 .header-content {
     max-width: 960px;
     margin: 0 auto;
@@ -16,25 +17,30 @@ header {
     box-sizing: border-box;
 
     display: grid;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
+    column-gap: 20px;
     align-items: center;
 }
 
-/* Логотип слева */
+/* Логотип слева занимает две строки */
 .logo {
     width: 100px;
     height: 100px;
     object-fit: cover;
+
     grid-column: 1;
     grid-row: 1 / 3;
 }
 
-/* Название сайта */
+/* Название сайта слева под меню */
 .header-content h1 {
     margin: 0;
+
     grid-column: 2;
     grid-row: 2;
+
+    font-size: 26px;
 }
 
 /* Меню справа сверху */
@@ -48,6 +54,8 @@ nav a {
     margin-left: 20px;
 }
 
+
+/* ОСНОВНОЙ КОНТЕНТ */
 main {
     max-width: 700px;
     margin: 0 auto;
@@ -55,13 +63,14 @@ main {
     box-sizing: border-box;
 }
 
-/* Все большие картинки не выходят за границы контента */
+/* Картинки не растягиваем */
 main img {
     max-width: 100%;
     height: auto;
 }
 
-/* Таблица */
+
+/* ТАБЛИЦА */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -79,7 +88,7 @@ th {
     background-color: lightblue;
 }
 
-/* Чередование строк */
+/* Чётные и нечётные строки */
 tr:nth-child(even) {
     background-color: #eeeeee;
 }
@@ -88,18 +97,26 @@ tr:nth-child(odd) {
     background-color: white;
 }
 
-/* Форма */
+/* Чтобы заголовок таблицы оставался голубым */
+tr:first-child {
+    background-color: lightblue;
+}
+
+
+/* ФОРМА */
 form {
     margin-top: 20px;
 }
 
-/* Подвал на всю ширину */
+
+/* ПОДВАЛ — на всю ширину */
 footer {
     width: 100%;
     background-color: lightblue;
     margin-top: 20px;
 }
 
+/* Текст footer ограничен 960px */
 .footer-content {
     max-width: 960px;
     margin: 0 auto;
