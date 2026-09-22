@@ -142,3 +142,8 @@ footer {
     padding: 20px;
     box-sizing: border-box;
 }
+main img {
+    max-width: 100%;
+    width: 600px;
+    height: auto;
+}
