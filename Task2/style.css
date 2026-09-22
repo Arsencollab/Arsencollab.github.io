@@ -24,9 +24,13 @@ header {
     object-fit: cover;
 }
 
+.header-content h1 {
+    margin: 0;
+    flex: 1;
+}
+
 nav {
-    max-width: 960px;
-    margin: 0 auto;
+    margin-left: auto;
     padding: 10px;
 }
 
