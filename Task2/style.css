@@ -33,7 +33,7 @@ header {
     grid-row: 2;
 
     font-size: 30px;
-    front-weight:bold;
+    font-weight:bold;
 }
 nav {
     grid-column: 2;
