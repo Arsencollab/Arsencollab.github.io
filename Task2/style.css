@@ -69,3 +69,7 @@ footer {
     margin: 0 auto;
     padding: 20px;
 }
+img {
+    max-width: 600px;
+    height: auto;
+}
