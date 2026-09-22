@@ -59,12 +59,13 @@ nav a {
 main {
     max-width: 700px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0;
     box-sizing: border-box;
 }
 
 /* Картинки не растягиваем */
 main img {
+    width:600px;
     max-width: 100%;
     height: auto;
 }
@@ -127,23 +128,4 @@ footer {
 #table,
 #form {
     margin-top: 20px;
-}
-
-/* Подвал */
-footer {
-    width: 100%;
-    background-color: lightblue;
-    margin-top: 20px;
-}
-
-.footer-content {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-}
-main img {
-    max-width: 100%;
-    width: 600px;
-    height: auto;
 }
