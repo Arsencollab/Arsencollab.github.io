@@ -123,3 +123,22 @@ footer {
     padding: 20px;
     box-sizing: border-box;
 }
+#links,
+#table,
+#form {
+    margin-top: 20px;
+}
+
+/* Подвал */
+footer {
+    width: 100%;
+    background-color: lightblue;
+    margin-top: 20px;
+}
+
+.footer-content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
