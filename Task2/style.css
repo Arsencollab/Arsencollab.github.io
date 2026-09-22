@@ -9,36 +9,43 @@ header {
     background-color: lightblue;
 }
 
-/* Содержимое шапки — максимум 960px */
 .header-content {
     max-width: 960px;
     margin: 0 auto;
     padding: 15px;
     box-sizing: border-box;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: auto auto;
     align-items: center;
-    gap: 20px;
 }
 
+/* Логотип слева */
 .logo {
     width: 100px;
     height: 100px;
     object-fit: cover;
+    grid-column: 1;
+    grid-row: 1 / 3;
 }
 
+/* Название сайта */
 .header-content h1 {
     margin: 0;
-    flex: 1;
+    grid-column: 2;
+    grid-row: 2;
 }
 
-/* Меню */
+/* Меню справа сверху */
 nav {
-    margin-left: auto;
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
 }
 
 nav a {
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 /* Основной контент */
