@@ -2,14 +2,10 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
-
-/* ШАПКА — на всю ширину */
 header {
     width: 100%;
     background-color: lightblue;
 }
-
-/* Содержимое шапки */
 .header-content {
     max-width: 960px;
     margin: 0 auto;
@@ -22,8 +18,6 @@ header {
     column-gap: 20px;
     align-items: center;
 }
-
-/* Логотип слева занимает две строки */
 .logo {
     width: 120px;
     height: 100px;
@@ -32,8 +26,6 @@ header {
     grid-column: 1;
     grid-row: 1 / 3;
 }
-
-/* Название сайта слева под меню */
 .header-content h1 {
     margin: 0;
 
@@ -43,8 +35,6 @@ header {
     font-size: 30px;
     front-weight:bold;
 }
-
-/* Меню справа сверху */
 nav {
     grid-column: 2;
     grid-row: 1;
@@ -54,25 +44,17 @@ nav {
 nav a {
     margin-left: 20px;
 }
-
-
-/* ОСНОВНОЙ КОНТЕНТ */
 main {
     max-width: 700px;
     margin: 20px; auto;
     padding: 0;
     box-sizing: border-box;
 }
-
-/* Картинки не растягиваем */
 main img {
     width:600px;
     max-width: 100%;
     height: auto;
 }
-
-
-/* ТАБЛИЦА */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -89,8 +71,6 @@ td {
 th {
     background-color: lightblue;
 }
-
-/* Чётные и нечётные строки */
 tr:nth-child(even) {
     background-color: #eeeeee;
 }
@@ -98,27 +78,17 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
     background-color: white;
 }
-
-/* Чтобы заголовок таблицы оставался голубым */
 tr:first-child {
     background-color: lightblue;
 }
-
-
-/* ФОРМА */
 form {
     margin-top: 20px;
 }
-
-
-/* ПОДВАЛ — на всю ширину */
 footer {
     width: 100%;
     background-color: lightblue;
     margin-top: 20px;
 }
-
-/* Текст footer ограничен 960px */
 .footer-content {
     max-width: 960px;
     margin: 0 auto;
@@ -131,32 +101,25 @@ footer {
     margin-top: 20px;
 }
 .content-box {
+    width:100%;
     border: 1px solid #5aa9c4;
     margin-bottom: 20px;
     box-sizing: border-box;
 }
-
-/* Заголовки блоков */
 .content-box h2 {
     margin: 0;
     padding: 10px 15px;
     background-color: lightblue;
 }
-
-/* Содержимое внутри блоков */
 .content-box > ul,
 .content-box > table,
 .content-box > form {
     margin-left: 15px;
     margin-right: 15px;
 }
-
-/* Таблица */
 .content-box table {
     width: calc(100% - 30px);
 }
-
-/* Форма */
 .content-box form {
     padding-bottom: 15px;
 }
