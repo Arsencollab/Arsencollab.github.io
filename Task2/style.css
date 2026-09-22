@@ -12,6 +12,10 @@ header {
     max-width: 960px;
     margin: 0 auto;
     padding: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .logo {
