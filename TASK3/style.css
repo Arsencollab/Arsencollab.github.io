@@ -191,3 +191,70 @@ nav a {
         margin-left: 20px;
     }
 }
+/* ===== TASK 3 MOBILE FIRST ===== */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* На телефоне: таблица первая */
+.table-block {
+    order: 1;
+}
+
+.links-block {
+    order: 2;
+}
+
+.form-block {
+    order: 3;
+}
+
+/* На телефоне меню вертикальное */
+.header-content nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+}
+
+.header-content nav a {
+    display: block;
+    margin: 5px 0;
+}
+
+/* Изображения не выходят за экран */
+.content-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ===== ПЛАНШЕТ И КОМПЬЮТЕР ===== */
+
+@media screen and (min-width: 800px) {
+
+    .links-block {
+        order: 1;
+    }
+
+    .table-block {
+        order: 2;
+    }
+
+    .form-block {
+        order: 3;
+    }
+
+    .header-content nav {
+        flex-direction: row;
+        justify-content: flex-end;
+        width: auto;
+    }
+
+    .header-content nav a {
+        margin: 0 0 0 20px;
+    }
+}
