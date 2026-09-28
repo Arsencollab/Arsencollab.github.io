@@ -123,4 +123,7 @@ footer {
 .content-box form {
     padding-bottom: 15px;
 }
-
+nav-aside-wrapper {
+  display: flex;
+  flex-direction: column;
+}
