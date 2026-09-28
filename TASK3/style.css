@@ -132,3 +132,62 @@ nav-aside-wrapper {
     flex-direction: row;
   }
 }
+/* Задание 3: Mobile First */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* На смартфоне таблица должна быть выше списка */
+.table-block {
+    order: 1;
+}
+
+.links-block {
+    order: 2;
+}
+
+.form-block {
+    order: 3;
+}
+
+/* Меню на смартфоне вертикальное */
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    display: block;
+    margin: 5px 0;
+}
+
+
+/* Планшеты и компьютеры */
+@media screen and (min-width: 800px) {
+
+    /* Возвращаем обычный порядок */
+    .links-block {
+        order: 1;
+    }
+
+    .table-block {
+        order: 2;
+    }
+
+    .form-block {
+        order: 3;
+    }
+
+    /* Меню снова горизонтальное */
+    nav {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    nav a {
+        display: inline-block;
+        margin-left: 20px;
+    }
+}
