@@ -132,14 +132,12 @@ nav-aside-wrapper {
     flex-direction: row;
   }
 }
-/* Задание 3: Mobile First */
 
 .main-content {
     display: flex;
     flex-direction: column;
 }
 
-/* На смартфоне таблица должна быть выше списка */
 .table-block {
     order: 1;
 }
@@ -152,7 +150,6 @@ nav-aside-wrapper {
     order: 3;
 }
 
-/* Меню на смартфоне вертикальное */
 nav {
     display: flex;
     flex-direction: column;
@@ -164,10 +161,10 @@ nav a {
 }
 
 
-/* Планшеты и компьютеры */
+
 @media screen and (min-width: 800px) {
 
-    /* Возвращаем обычный порядок */
+
     .links-block {
         order: 1;
     }
@@ -180,7 +177,6 @@ nav a {
         order: 3;
     }
 
-    /* Меню снова горизонтальное */
     nav {
         flex-direction: row;
         justify-content: flex-end;
@@ -191,7 +187,6 @@ nav a {
         margin-left: 20px;
     }
 }
-/* ===== TASK 3 MOBILE FIRST ===== */
 
 .main-content {
     display: flex;
@@ -199,7 +194,6 @@ nav a {
     width: 100%;
 }
 
-/* На телефоне: таблица первая */
 .table-block {
     order: 1;
 }
@@ -212,7 +206,6 @@ nav a {
     order: 3;
 }
 
-/* На телефоне меню вертикальное */
 .header-content nav {
     display: flex;
     flex-direction: column;
@@ -225,15 +218,10 @@ nav a {
     margin: 5px 0;
 }
 
-/* Изображения не выходят за экран */
 .content-box img {
     max-width: 100%;
     height: auto;
 }
-
-
-/* ===== ПЛАНШЕТ И КОМПЬЮТЕР ===== */
-
 @media screen and (min-width: 800px) {
 
     .links-block {
