@@ -246,3 +246,9 @@ nav a {
         margin: 0 0 0 20px;
     }
 }
+main.container {
+    max-width: 700px;
+}
+.container-box h2{
+    background-color: lightblue;
+}
