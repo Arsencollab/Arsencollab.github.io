@@ -6,73 +6,82 @@ document.addEventListener("DOMContentLoaded", function () {
     const pager = document.getElementById("pager");
 
     let currentPage = 0;
-    let imagesPerPage = 1;
-    let pageCount = 0;
 
-    function updateSettings() {
-        if (window.innerWidth >= 768) {
-            imagesPerPage = 3;
-        } else {
-            imagesPerPage = 1;
+    function getImagesPerPage() {
+        if (window.innerWidth <= 600) {
+            return 1;
         }
 
-        pageCount = Math.ceil(images.length / imagesPerPage);
-
-        if (currentPage >= pageCount) {
-            currentPage = pageCount - 1;
-        }
-
-        createPager();
-        showPage();
+        return 3;
     }
 
-    function showPage() {
-        const shift = currentPage * 100;
-        slides.style.transform = "translateX(-" + shift + "%)";
-
-        const buttons = pager.querySelectorAll("button");
-
-        buttons.forEach(function (button, index) {
-            if (index === currentPage) {
-                button.classList.add("active");
-            } else {
-                button.classList.remove("active");
-            }
-        });
+    function getPageCount() {
+        return Math.ceil(images.length / getImagesPerPage());
     }
 
     function createPager() {
         pager.innerHTML = "";
 
-        for (let i = 0; i < pageCount; i += 1) {
+        const pageCount = getPageCount();
+
+        for (let i = 0; i < pageCount; i++) {
             const button = document.createElement("button");
             button.type = "button";
             button.setAttribute("aria-label", "Страница " + (i + 1));
 
             button.addEventListener("click", function () {
                 currentPage = i;
-                showPage();
+                updateSlider();
             });
 
             pager.appendChild(button);
         }
     }
 
-    prevButton.addEventListener("click", function () {
-        if (currentPage > 0) {
-            currentPage -= 1;
-            showPage();
+    function updateSlider() {
+        const imagesPerPage = getImagesPerPage();
+        const pageCount = getPageCount();
+
+        if (currentPage >= pageCount) {
+            currentPage = pageCount - 1;
         }
-    });
+
+        const shift = currentPage * (100 / imagesPerPage) * imagesPerPage;
+        slides.style.transform = "translateX(-" + shift + "%)";
+
+        const buttons = pager.querySelectorAll("button");
+
+        buttons.forEach(function (button, index) {
+            button.classList.toggle("active", index === currentPage);
+        });
+    }
 
     nextButton.addEventListener("click", function () {
-        if (currentPage < pageCount - 1) {
-            currentPage += 1;
-            showPage();
+        if (currentPage < getPageCount() - 1) {
+            currentPage++;
+        } else {
+            currentPage = 0;
         }
+
+        updateSlider();
     });
 
-    window.addEventListener("resize", updateSettings);
+    prevButton.addEventListener("click", function () {
+        if (currentPage > 0) {
+            currentPage--;
+        } else {
+            currentPage = getPageCount() - 1;
+        }
 
-    updateSettings();
+        updateSlider();
+    });
+
+    window.addEventListener("resize", function () {
+        currentPage = 0;
+        createPager();
+        updateSlider();
+    });
+
+    createPager();
+    updateSlider();
 });
