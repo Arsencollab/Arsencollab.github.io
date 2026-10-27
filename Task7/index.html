@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея изображений</title>
 
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <h1>Галерея изображений</h1>
+
+        <div class="gallery">
+            <button class="arrow" id="prev" type="button" aria-label="Предыдущая страница">
+                &#8592;
+            </button>
+
+            <div class="slider">
+                <div class="slides" id="slides">
+                    <img src="images/1.jpg" alt="Изображение 1">
+                    <img src="images/2.jpg" alt="Изображение 2">
+                    <img src="images/3.jpg" alt="Изображение 3">
+                    <img src="images/4.jpg" alt="Изображение 4">
+                    <img src="images/5.jpg" alt="Изображение 5">
+                    <img src="images/6.jpg" alt="Изображение 6">
+                    <img src="images/7.jpg" alt="Изображение 7">
+                    <img src="images/8.jpg" alt="Изображение 8">
+                </div>
+            </div>
+
+            <button class="arrow" id="next" type="button" aria-label="Следующая страница">
+                &#8594;
+            </button>
+        </div>
+
+        <div class="pager" id="pager"></div>
+    </main>
+</body>
+</html>
