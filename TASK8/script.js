@@ -1,6 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("feedback-form");
+    const openButton = document.getElementById("open-form");
     const result = document.getElementById("result");
     const storageKey = "feedbackDraft";
     const fields = form.querySelectorAll("input, textarea");
@@ -43,24 +44,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function updateHistory() {
-        if (window.location.hash !== "#feedback") {
-            history.pushState({ formOpen: true }, "", "#feedback");
-        }
+    function updateFormVisibility() {
+        form.hidden = window.location.hash !== "#feedback";
+        openButton.hidden = !form.hidden;
     }
+
+    openButton.addEventListener("click", function () {
+        history.pushState({ formOpen: true }, "", "#feedback");
+        updateFormVisibility();
+    });
+
+    window.addEventListener("popstate", updateFormVisibility);
+    window.addEventListener("hashchange", updateFormVisibility);
 
     fields.forEach(function (field) {
         field.addEventListener("input", saveForm);
         field.addEventListener("change", saveForm);
-    });
-
-    window.addEventListener("popstate", function () {
-        if (window.location.hash !== "#feedback") {
-            form.hidden = true;
-            result.textContent = "";
-        } else {
-            form.hidden = false;
-        }
     });
 
     form.addEventListener("submit", async function (event) {
@@ -99,6 +98,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     restoreForm();
-    updateHistory();
+    updateFormVisibility();
 });
-
