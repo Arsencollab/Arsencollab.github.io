@@ -6,63 +6,114 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
+    background: #f4f6f9;
 }
 
 main {
     max-width: 600px;
     margin: 40px auto;
     padding: 25px;
-    background-color: white;
-    border: 1px solid #cccccc;
+    text-align: center;
+    background: white;
     border-radius: 10px;
 }
 
-h1 {
+button {
+    padding: 12px;
+    background: #3478c7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #245a98;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+    padding: 22px;
+    background: white;
+    border-radius: 10px;
+}
+
+h2 {
+    margin: 0 0 15px;
     text-align: center;
-    font-size: 26px;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
 input:not([type="checkbox"]),
 textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #aaaaaa;
+    padding: 9px;
+    border: 1px solid #aaa;
     border-radius: 5px;
     font-size: 16px;
 }
 
-button {
-    padding: 12px;
-    background-color: #3478c7;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+.agreement {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 14px;
 }
 
-button:hover {
-    background-color: #245a98;
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    padding: 4px 9px;
+    background: transparent;
+    color: #333;
+    font-size: 25px;
+}
+
+.close-button:hover {
+    background: #eee;
 }
 
 #result {
-    font-weight: bold;
     text-align: center;
+    font-weight: bold;
+}
+
+[hidden] {
+    display: none !important;
 }
 
 @media (max-width: 600px) {
     main {
         margin: 15px;
-        padding: 15px;
     }
-}
-[hidden] {
-    display: none !important;
+
+    .modal-content {
+        padding: 16px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
 }
