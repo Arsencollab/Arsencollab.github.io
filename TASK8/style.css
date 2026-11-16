@@ -63,4 +63,6 @@ button:hover {
         padding: 15px;
     }
 }
-
+[hidden] {
+    display: none !important;
+}
