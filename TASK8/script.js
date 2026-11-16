@@ -1,8 +1,11 @@
 
 document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("modal");
     const form = document.getElementById("feedback-form");
     const openButton = document.getElementById("open-form");
+    const closeButton = document.getElementById("close-form");
     const result = document.getElementById("result");
+
     const storageKey = "feedbackDraft";
     const fields = form.querySelectorAll("input, textarea");
 
@@ -10,11 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const data = {};
 
         fields.forEach(function (field) {
-            if (field.type === "checkbox") {
-                data[field.name] = field.checked;
-            } else {
-                data[field.name] = field.value;
-            }
+            data[field.name] = field.type === "checkbox"
+                ? field.checked
+                : field.value;
         });
 
         localStorage.setItem(storageKey, JSON.stringify(data));
@@ -44,18 +45,40 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function updateFormVisibility() {
-        form.hidden = window.location.hash !== "#feedback";
-        openButton.hidden = !form.hidden;
+    function updateModal() {
+        const isOpen = window.location.hash === "#feedback";
+
+        modal.hidden = !isOpen;
+        document.body.style.overflow = isOpen ? "hidden" : "";
     }
 
-    openButton.addEventListener("click", function () {
-        history.pushState({ formOpen: true }, "", "#feedback");
-        updateFormVisibility();
+    function openModal() {
+        if (window.location.hash !== "#feedback") {
+            history.pushState({ modalOpen: true }, "", "#feedback");
+        }
+
+        updateModal();
+    }
+
+    function closeModal() {
+        if (window.location.hash === "#feedback") {
+            history.back();
+        } else {
+            updateModal();
+        }
+    }
+
+    openButton.addEventListener("click", openModal);
+    closeButton.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            closeModal();
+        }
     });
 
-    window.addEventListener("popstate", updateFormVisibility);
-    window.addEventListener("hashchange", updateFormVisibility);
+    window.addEventListener("popstate", updateModal);
+    window.addEventListener("hashchange", updateModal);
 
     fields.forEach(function (field) {
         field.addEventListener("input", saveForm);
@@ -98,5 +121,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     restoreForm();
-    updateFormVisibility();
+    updateModal();
 });
